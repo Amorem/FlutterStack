@@ -28,13 +28,17 @@ List<Widget> createSquares(int numSquares) {
     Colors.lightBlue
   ];
   List<Widget> squares = List<Widget>();
+  squares.add(Container(color: Colors.black));
 
   while (i < numSquares) {
-    Container square = Container(
-      color: colors[i],
-      width: 60.0 * (numSquares - i),
-      height: 60.0 * (numSquares - i),
-      child: Text(i.toString()),
+    Align square = Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        color: colors[i],
+        width: 60.0 * (numSquares - i),
+        height: 60.0 * (numSquares - i),
+        child: Text(i.toString()),
+      ),
     );
     i++;
     squares.add(square);
