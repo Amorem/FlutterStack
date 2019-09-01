@@ -6,4 +6,7 @@ Stack
 ![stack](./screenshots/stack.png)
 
 Align
-![stack](./screenshots/align.png)
+![align](./screenshots/align.png)
+
+Positioned
+![positioned](./screenshots/positioned.png)
