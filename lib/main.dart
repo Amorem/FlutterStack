@@ -26,8 +26,13 @@ class Home extends StatelessWidget {
     return Container(
         width: sizeX,
         height: sizeY,
-        child: ListView(
-          children: showContacts(),
+        child: GridView.count(
+          scrollDirection: Axis.vertical,
+          crossAxisCount: 3,
+          children: createSquares(50),
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+          padding: EdgeInsets.all(5),
         ));
   }
 }
