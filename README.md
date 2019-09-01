@@ -14,5 +14,5 @@ Positioned
 Card
 ![card](./screenshots/card.png)
 
-Separator
-![separator](./screenshots/separator.png)
+ListView Separator
+![listview_separator](./screenshots/listview_separator.png)
