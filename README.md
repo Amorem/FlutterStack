@@ -13,3 +13,6 @@ Positioned
 
 Card
 ![card](./screenshots/card.png)
+
+Separator
+![separator](./screenshots/separator.png)

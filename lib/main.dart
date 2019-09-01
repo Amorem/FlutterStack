@@ -26,9 +26,10 @@ class Home extends StatelessWidget {
     return Container(
       width: sizeX,
       height: sizeY,
-      child: Stack(
-        children: showPizzaLayout(sizeX, sizeY),
-        // children: createSquares(5),
+      child: ListView.separated(
+        itemCount: 25,
+        itemBuilder: (context, index) => createSquare(index),
+        separatorBuilder: (context, index) => createSeparator(index),
       ),
     );
   }
@@ -117,18 +118,39 @@ List<Widget> createSquares(int numSquares) {
   squares.add(Container(color: Colors.black));
 
   while (i < numSquares) {
-    Positioned square = Positioned(
-      top: 100 + i.toDouble() * 100,
-      left: 25 + i.toDouble() * 25,
-      child: Container(
-        color: colors[i],
-        width: 60.0 * (numSquares - i),
-        height: 60.0 * (numSquares - i),
-        child: Text(i.toString()),
-      ),
+    Container square = Container(
+      color: colors[i % 5],
+      height: 100,
+      width: 100,
+      child: Text(i.toString()),
     );
+
     i++;
     squares.add(square);
   }
   return squares;
+}
+
+Widget createSquare(int position) {
+  List colors = [
+    Colors.amber,
+    Colors.deepPurple,
+    Colors.deepOrange,
+    Colors.indigo,
+    Colors.lightBlue
+  ];
+
+  Container square = Container(
+    color: colors[position % 5],
+    height: 100,
+    width: 100,
+    child: Text(position.toString()),
+  );
+
+  return square;
+}
+
+Widget createSeparator(int position) {
+  Widget separator = Container(height: 15, color: Colors.black);
+  return separator;
 }
